@@ -26,8 +26,14 @@ export abstract class DioAccount {
   };
 
   withdraw = (value: number): void => {
-    this.balance -= value;
-    console.log(`Voce sacou $${value} seu saldo atual $${this.balance}`);
+    if (this.validateStatus() && value < this.balance) {
+      this.balance -= value;
+      console.log(`Voce sacou $${value} seu saldo atual $${this.balance}`);
+    } else {
+      throw new Error(
+        `Desculpa, mas você não pode solicitar uma retirada maior que seu saldo!`
+      );
+    }
   };
 
   getBalance = (): void => {
