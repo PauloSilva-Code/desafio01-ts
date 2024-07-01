@@ -1,48 +1,24 @@
 import { CompanyAccount } from "./class/CompanyAccount";
 import { PeopleAccount } from "./class/PeopleAccount";
 import { SavingAccount } from "./class/SavingAccount";
+import {
+  logDepositCompany,
+  logDepositPeople,
+  logDepositSaving,
+  logLoanCompany,
+  logWithdrawCompany,
+  logWithdrawPeople,
+} from "./functionAccount";
 
-const peopleAccount: PeopleAccount = new PeopleAccount(1, "Nat", 10);
+export const peopleAccount: PeopleAccount = new PeopleAccount(1, "Nat", 10);
+export const companyAccount: CompanyAccount = new CompanyAccount("DIO", 20);
+export const savingAccount: SavingAccount = new SavingAccount(5, "Paulo", 8);
 
-export function logDepositPeople(value: number): void {
-  peopleAccount.deposit(value);
-  peopleAccount.getBalance();
-  console.log(peopleAccount);
-}
+logDepositPeople(1500);
+logWithdrawPeople(500);
 
-export function logWithdrawPeople(value: number): void {
-  peopleAccount.withdraw(value);
-  peopleAccount.getBalance();
-  console.log(peopleAccount);
-}
-
-const companyAccount: CompanyAccount = new CompanyAccount("DIO", 20);
-
-export function logDepositCompany(value: number): void {
-  companyAccount.deposit(value);
-  companyAccount.getBalance();
-  console.log(companyAccount);
-}
-
-export function logWithdrawCompany(value: number): void {
-  companyAccount.withdraw(value);
-  companyAccount.getBalance();
-  console.log(companyAccount);
-}
-
-export function logLoanCompany(value: number): void {
-  companyAccount.getLoan(value);
-  companyAccount.getBalance();
-  companyAccount.showLoan();
-  console.log(companyAccount);
-}
-
-const savingAccount: SavingAccount = new SavingAccount(5, "Paulo", 8);
-
-export function logDepositSaving(value: number): void {
-  savingAccount.getDepositSaving(value);
-  savingAccount.getBalance();
-  console.log(savingAccount);
-}
+logDepositCompany(5000);
+logWithdrawCompany(3000);
+logLoanCompany(7000);
 
 logDepositSaving(50);

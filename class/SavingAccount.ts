@@ -1,7 +1,7 @@
 import { DioAccount } from "./DioAccount";
 
 export class SavingAccount extends DioAccount {
-  doc_id: number;
+  private doc_id: number;
   private increase = 100;
 
   constructor(doc_id: number, name: string, accountNumber: number) {
