@@ -1,6 +1,5 @@
 import { companyAccount, peopleAccount, savingAccount } from "./app";
 
-// People
 export function logDepositPeople(value: number): void {
   peopleAccount.deposit(value);
   peopleAccount.getBalance();
@@ -13,7 +12,6 @@ export function logWithdrawPeople(value: number): void {
   console.log(peopleAccount);
 }
 
-// Company
 export function logDepositCompany(value: number): void {
   companyAccount.deposit(value);
   companyAccount.getBalance();
@@ -33,7 +31,6 @@ export function logLoanCompany(value: number): void {
   console.log(companyAccount);
 }
 
-// Saving
 export function logDepositSaving(value: number): void {
   savingAccount.getDepositSaving(value);
   savingAccount.getBalance();

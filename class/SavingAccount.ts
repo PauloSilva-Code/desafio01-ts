@@ -13,8 +13,8 @@ export class SavingAccount extends DioAccount {
     console.log(`🏦 Voce depositou $${value}\n`);
 
     if (value) {
-      value += this.increase; // 50 + 100 = 150
-      this.balance += value; // 150  joga balance
+      value += this.increase;
+      this.balance += value;
     }
 
     return this.balance;
